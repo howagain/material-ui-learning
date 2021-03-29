@@ -25,7 +25,11 @@ function ElevationScroll(props) {
 
 const useStyles = makeStyles(theme=>({
   toolbarMargin: {
-    ...theme.mixins.toolbar
+    ...theme.mixins.toolbar,
+    marginBottom: "3em"
+  },
+  logo:{
+    height: '7em'
   }
 }))
 
@@ -39,10 +43,10 @@ const Header = () => {
     Static keeps it at the top when you scroll so it disappears 
     Color comes from Theme
     */}
-      <AppBar>
+      <AppBar position="fixed">
         {/* Why do we need the toolbar to allow horizontal rather than vertical layout*/}
         <Toolbar disableGutters>
-          <img alt="company logo" src={logo}/>
+          <img alt="company logo" className={classes.logo} src={logo}/>
         </Toolbar>
       </AppBar>
     </ElevationScroll>
